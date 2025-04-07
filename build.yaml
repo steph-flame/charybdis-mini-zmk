@@ -60,6 +60,12 @@ include:
     keymap: qwerty
     format: dongle
     artifact-name: charybdis_qwerty_dongle
+  - board: seeeduino_xiao_ble
+    shield: charybdis_dongle prospector_adapter
+    keymap: qwerty
+    format: dongle
+    artifact-name: charybdis_qwerty_prospector_dongle
+
 
   # Colemak DH Dongle
   - board: nice_nano_v2
