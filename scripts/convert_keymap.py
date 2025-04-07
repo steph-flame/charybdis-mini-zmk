@@ -31,7 +31,7 @@ def main():
     full_path = args.in_path
     
     # Check argument values and convert keymap
-    if conversion_type not in ['q2c','c2q']:
+    if conversion_type not in ['q2c','c2q','q2n']:
         print("Error: Invalid conversion type selected.")
         sys.exit(1)
 
