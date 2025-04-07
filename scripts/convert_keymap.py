@@ -36,7 +36,11 @@ def main():
         sys.exit(1)
 
     path, in_file = os.path.split(full_path)
-    out_file = 'qwerty.keymap' if conversion_type == 'c2q' else 'colemak_dh.keymap'
+    if (conversion_type == c2q):
+        out_file = 'qwerty.keymap'
+    else:
+        out_file  = 'colemak_dh.keymap'
+
     out_full_path = os.path.join(path, out_file)
 
     print("#####################################################################")
