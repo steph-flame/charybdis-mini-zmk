@@ -59,7 +59,7 @@ def main():
             # Bottom row
             'Z': 'Z', 'X': 'X', 'C': 'C', 'V': 'D', 'B': 'V', 'N': 'K', 'M': 'H',
         }
-    else if conversion_type == 'q2n':
+    elif conversion_type == 'q2n':
         initial_keymap = {
             # Top row
             'Q': 'Q', 'W': 'W', 'E': 'D', 'R': 'F', 'T': 'K', 'Y': 'J', 'U': 'U', 'I': 'R', 'O': 'L', 'P': 'SEMICOLON',
