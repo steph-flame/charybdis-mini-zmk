@@ -88,7 +88,7 @@ include:
     shield: charybdis_dongle prospector_adapter
     keymap: colemak_dh
     format: dongle
-    artifact-name: charybdis_qwerty_dongle_prospector
+    artifact-name: charybdis_colemak_dongle_prospector
 
   # Firmware Reset
   - board: nice_nano_v2
