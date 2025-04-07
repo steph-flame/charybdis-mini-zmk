@@ -64,7 +64,7 @@ include:
     shield: charybdis_dongle prospector_adapter
     keymap: qwerty
     format: dongle
-    artifact-name: charybdis_qwerty_prospector_dongle
+    artifact-name: charybdis_qwerty_dongle_prospector
 
 
   # Colemak DH Dongle
