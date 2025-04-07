@@ -36,7 +36,7 @@ def main():
         sys.exit(1)
 
     path, in_file = os.path.split(full_path)
-    if (conversion_type == c2q):
+    if (conversion_type == 'c2q'):
         out_file = 'qwerty.keymap'
     else:
         out_file  = 'colemak_dh.keymap'
