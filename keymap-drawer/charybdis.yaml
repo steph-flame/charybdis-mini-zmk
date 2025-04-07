@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: charybdis}
 layers:
-  BASE:
+  Norman:
   - DEV TOOLS
   - Q
   - W
@@ -14,7 +14,7 @@ layers:
   - P
   - L_BASE L_PHOTO L_GAME
   - {t: TAB, h: LCMD}
-  - {t: A, h: SYM}
+  - {t: A, h: Symbols}
   - {t: S, h: LEFT ALT}
   - {t: D, h: LCTRL}
   - {t: F, h: LEFT SHIFT}
@@ -40,9 +40,9 @@ layers:
   - SCRL SLOW
   - L CLK
   - '&td_bs'
-  - {t: RETURN, h: MOUSE}
+  - {t: RETURN, h: Mouse}
   - '&td_space'
-  NUM:
+  Numbers:
   - {t: ▽, type: trans}
   - ''
   - ''
@@ -84,7 +84,7 @@ layers:
   - {t: ▽, type: trans}
   - .
   - '0'
-  NAV:
+  Navigation:
   - ''
   - ''
   - ''
@@ -126,7 +126,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  SYM:
+  Symbols:
   - ''
   - ''
   - ''
@@ -168,49 +168,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  GAME:
-  - '1'
-  - TAB
-  - Q
-  - W
-  - E
-  - R
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - '2'
-  - LCTRL
-  - A
-  - S
-  - D
-  - F
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '3'
-  - LSHFT
-  - Z
-  - X
-  - C
-  - V
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - SPACE
-  - LEFT ALT
-  - ''
-  - ''
-  PHOTOS:
+  Game:
   - {t: ▽, type: trans}
   - TAG Z
   - TAG E
@@ -252,7 +210,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  EXTRAS:
+  Extras:
   - POWER
   - SHRUG
   - LGTM
@@ -294,7 +252,7 @@ layers:
   - ''
   - ''
   - ''
-  MOUSE:
+  Mouse:
   - ''
   - WHEEL L
   - WHEEL D
@@ -336,7 +294,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: RETURN, type: held}
   - {t: ▽, type: trans}
-  SLOW:
+  Slow:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -378,7 +336,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  SCROLL:
+  Scroll:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -423,22 +381,22 @@ layers:
 combos:
 - p: [17, 18]
   k: CAPS WORD
-  l: [BASE]
+  l: [Norman]
 - p: [28, 37]
   k: Mid CLK
 - p: [16, 37]
   k: R CLK
 - p: [20, 21]
   k: )
-  l: [SYM]
+  l: [Symbols]
 - p: [21, 22]
   k: ']'
-  l: [SYM]
+  l: [Symbols]
 - p: [8, 9]
   k: '}'
-  l: [SYM]
+  l: [Symbols]
 - p: [32, 33]
   k: '>'
-  l: [SYM]
+  l: [Symbols]
 - p: [38, 39]
   k: L_BASE L_EXTRA
