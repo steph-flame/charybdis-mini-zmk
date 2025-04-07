@@ -14,7 +14,7 @@ def main():
     parser.add_argument(
         '-c', '--convert', 
         type=str, 
-        choices=['q2c', 'c2q'], 
+        choices=['q2c', 'c2q', 'q2n'],
         default='q2c',
         help="Specify the conversion: 'q2c' will convert QWERTY to Colemak DH, 'c2q' will convert Colemak DH to QWERTY (default: 'q2c')"
     )
@@ -59,6 +59,15 @@ def main():
             # Bottom row
             'Z': 'Z', 'X': 'X', 'C': 'C', 'V': 'D', 'B': 'V', 'N': 'K', 'M': 'H',
         }
+    else if conversion_type == 'q2n':
+        initial_keymap = {
+            # Top row
+            'Q': 'Q', 'W': 'W', 'E': 'D', 'R': 'F', 'T': 'K', 'Y': 'J', 'U': 'U', 'I': 'R', 'O': 'L', 'P': 'SEMICOLON',
+            # Home row
+            'A': 'A', 'S': 'S', 'D': 'E', 'F': 'T', 'G': 'G', 'H': 'Y', 'J': 'N', 'K': 'I', 'L': 'O', 'SEMICOLON': 'H',
+            # Bottom row
+            'Z': 'Z', 'X': 'X', 'C': 'C', 'V': 'V', 'B': 'B', 'N': 'P', 'M': 'M',
+                           }
     else:
         initial_keymap = {
             # Top row (numbers and symbols are not included in this example)
