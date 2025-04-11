@@ -2,59 +2,54 @@
     combos {
         compatible = "zmk,combos";
 
-        CapsWord {
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <RM1 RM2>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <50>;
+        };
+
+        opt_backspace {
+            bindings = <&kp LA(BACKSPACE)>;
+            key-positions = <RM1 RM2 RM3>;
+            timeout-ms = <70>;
+            require-prior-idle-ms = <100>;
+        };
+
+        shift {
+            bindings = <&sk LEFT_SHIFT>;
+            key-positions = <LM2 LM1>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
+        };
+
+        caps_lock {
             bindings = <&caps_word>;
-            key-positions = <17 18>;
-            layers = <0>;
+            key-positions = <LM3 LM2 LM1>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <150>;
         };
 
-        MiddleClick {
-            bindings = <&mkp MCLK>;
-            key-positions = <28 37>;
+        combo_to_rus {
+            bindings = <&to_russian>;
+            key-positions = <RT3 RT4>;
+            timeout-ms = <250>;
+            require-prior-idle-ms = <200>;
         };
 
-        RightClick {
-            bindings = <&mkp RCLK>;
-            key-positions = <16 37>;
+        combo_to_eng {
+            bindings = <&to_eng>;
+            key-positions = <LT4 LT3>;
+            timeout-ms = <250>;
+            require-prior-idle-ms = <200>;
         };
 
-        RightParen {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <20 21>;
-            layers = <3>;
+        combo_to_game {
+            bindings = <&to GAME>;
+            key-positions = <LT5 LB5>;
+            timeout-ms = <250>;
+            require-prior-idle-ms = <200>;
         };
 
-        RightBracket {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <21 22>;
-            layers = <3>;
-        };
-
-        RightBrace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <8 9>;
-            layers = <3>;
-        };
-
-        RightGreaterThan {
-            bindings = <&kp GREATER_THAN>;
-            key-positions = <32 33>;
-            layers = <3>;
-        };
-
-        BASE_or_EXTRAS {
-            bindings = <&td_bore>;
-            key-positions = <38 39>;
-        };
-
-        // GameLayer {
-        //     bindings = <&tog 4>;
-        //     key-positions = <8 9>;
-        // };
-
-        // PhotoLayer {
-        //     bindings = <&tog 5>;
-        //     key-positions = <2 3>;
-        // };
     };
 };
