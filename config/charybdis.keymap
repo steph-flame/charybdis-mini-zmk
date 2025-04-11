@@ -5,6 +5,9 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/ext_power.h>
+
+#define HOST_OS 2
+#define QUICK_TAP_MS 175
 #include "zmk-helpers/helper.h"
 #include "zmk-helpers/key-labels/42.h"
 #include "zmk-helpers/unicode-chars/russian.dtsi"
@@ -22,8 +25,6 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
 #define THUMBS LH2 LH1 LH0 RH0 RH1 // thumb cluster for both hands
 
-#define QUICK_TAP_MS 175
-#define HOST_OS 2
 
 #include "macros.dtsi"
 #include "behaviors.dtsi"
