@@ -1,6 +1,5 @@
 / {
     macros {
-    macros {
         /**
          * Temporarily switches to a layer (`&mo`) while a modifier is held.
          * Analogous to QMK's `LM()`, using a parameterized macro.
