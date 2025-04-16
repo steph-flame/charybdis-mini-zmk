@@ -1,2 +1,10 @@
 boards/shields/charybdis/charybdis.keymap
 drivers/
+.build
+.direnv
+.west
+modules
+firmware
+zephyr
+zmk
+draw/base.yaml
