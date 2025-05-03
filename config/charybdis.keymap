@@ -87,7 +87,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&vtrackball>;
-        input-processors = <&zip_xy_scaler 1 3>;
+        input-processors = <&zip_xy_scaler 1 3>, <&zip_temp_layer MOUSE 1000>;
 
 //        snipe {
 //            layers = <SNIPE>;
@@ -96,7 +96,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 
         scroll {
             layers = <SCROLL>;
-            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 36>, <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 72>>;
         };
     };
 //    /* input config for mouse move mode */
