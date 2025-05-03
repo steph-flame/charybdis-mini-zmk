@@ -89,10 +89,10 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
         device = <&vtrackball>;
         input-processors = <&zip_xy_scaler 1 3>;
 
-        snipe {
-            layers = <SNIPE>;
-            input-processors = <&zip_xy_scaler 1 9>;
-        };
+//        snipe {
+//            layers = <SNIPE>;
+//            input-processors = <&zip_xy_scaler 1 9>;
+//        };
 
         scroll {
             layers = <SCROLL>;
