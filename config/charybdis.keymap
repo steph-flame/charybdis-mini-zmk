@@ -130,11 +130,11 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 //    };
 //
 //    /* adjust cooldown waiting period for mouse key layer after activated */
-//    ib_toggle_layer: ib_toggle_layer {
-//        compatible = "zmk,input-behavior-tog-layer";
-//        #binding-cells = <1>;
-//        time-to-live-ms = <750>;
-//    };
+    ib_toggle_layer: ib_toggle_layer {
+        compatible = "zmk,input-behavior-tog-layer";
+        #binding-cells = <1>;
+        time-to-live-ms = <750>;
+    };
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
