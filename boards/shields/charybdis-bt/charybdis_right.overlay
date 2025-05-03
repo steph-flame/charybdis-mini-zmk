@@ -40,20 +40,9 @@
 };
 
 // https://github.com/badjeff/zmk-pmw3610-driver
-// / {
-//   trackball_listener {
-//     compatible = "zmk,input-listener";
-//     device = <&trackball>;
-//   };
-// };
-
-&trackpad_listener {
-    input-processors = <&zip_xy_scaler 3 2>;
-
-    scroller {
-        layers = <SCROLL>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
-    };
-}
-
-&zip_temp_layer MOUSE 750
+/ {
+   trackball_listener {
+     compatible = "zmk,input-listener";
+     device = <&trackball>;
+   };
+ };
