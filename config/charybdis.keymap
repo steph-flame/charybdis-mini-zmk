@@ -5,6 +5,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/ext_power.h>
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 #define HOST_OS 2
 #define QUICK_TAP_MS 175
@@ -82,58 +84,66 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 };
 
 / {
-
-    /* input config for mouse move mode */
     trackball_listener {
-        compatible = "zmk,input-behavior-listener";
+        compatible = "zmk,input-listener";
         device = <&vtrackball>;
-        layers = <0 1 2 3 4 5 6>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <1>;
-        scale-divisor = <3>;
-        bindings = <&ib_toggle_layer MOUSE>;
-    };
-//
-////    /* input config for snipe mode */
-////    trackball_snipe_listener {
-////        compatible = "zmk,input-behavior-listener";
-////        device = <&vtrackball>;
-////        layers = <8>;
-////        evt-type = <INPUT_EV_REL>;
-////        x-input-code = <INPUT_REL_X>;
-////        y-input-code = <INPUT_REL_Y>;
-////        scale-multiplier = <1>;
-////        scale-divisor = <6>;
-////    };
-//
-//    /* input config for mouse scroll mode */
-    trackball_scroll_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&vtrackball>;
-        layers = <SCROLL>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_HWHEEL>; // horizontal scroll
-        y-input-code = <INPUT_REL_WHEEL>;  // vertical scroll
-        y-invert;
-//        bindings = <&ib_wheel_scaler 1 4>;
-    };
 
-    /* define a resolution down scaler only for INPUT_REL_WHEEL */
-    ib_wheel_scaler: ib_wheel_scaler {
-        compatible = "zmk,input-behavior-scaler";
-        #binding-cells = <2>;
-        evt-type = <INPUT_EV_REL>;
-        input-code = <INPUT_REL_WHEEL>;
+        scroll {
+            layers = <SCROLL>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 9>, <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
+        };
     };
-
-//    /* adjust cooldown waiting period for mouse key layer after activated */
-    ib_toggle_layer: ib_toggle_layer {
-        compatible = "zmk,input-behavior-tog-layer";
-        #binding-cells = <1>;
-        time-to-live-ms = <750>;
-    };
+//    /* input config for mouse move mode */
+//    trackball_listener {
+//        compatible = "zmk,input-behavior-listener";
+//        device = <&vtrackball>;
+//        layers = <0 1 2 3 4 5 6>;
+//        evt-type = <INPUT_EV_REL>;
+//        x-input-code = <INPUT_REL_X>;
+//        y-input-code = <INPUT_REL_Y>;
+//        scale-multiplier = <1>;
+//        scale-divisor = <3>;
+//        bindings = <&ib_toggle_layer MOUSE>;
+//    };
+////
+//////    /* input config for snipe mode */
+//////    trackball_snipe_listener {
+//////        compatible = "zmk,input-behavior-listener";
+//////        device = <&vtrackball>;
+//////        layers = <8>;
+//////        evt-type = <INPUT_EV_REL>;
+//////        x-input-code = <INPUT_REL_X>;
+//////        y-input-code = <INPUT_REL_Y>;
+//////        scale-multiplier = <1>;
+//////        scale-divisor = <6>;
+//////    };
+////
+////    /* input config for mouse scroll mode */
+//    trackball_scroll_listener {
+//        compatible = "zmk,input-behavior-listener";
+//        device = <&vtrackball>;
+//        layers = <SCROLL>;
+//        evt-type = <INPUT_EV_REL>;
+//        x-input-code = <INPUT_REL_HWHEEL>; // horizontal scroll
+//        y-input-code = <INPUT_REL_WHEEL>;  // vertical scroll
+//        y-invert;
+////        bindings = <&ib_wheel_scaler 1 4>;
+//    };
+//
+//    /* define a resolution down scaler only for INPUT_REL_WHEEL */
+//    ib_wheel_scaler: ib_wheel_scaler {
+//        compatible = "zmk,input-behavior-scaler";
+//        #binding-cells = <2>;
+//        evt-type = <INPUT_EV_REL>;
+//        input-code = <INPUT_REL_WHEEL>;
+//    };
+//
+////    /* adjust cooldown waiting period for mouse key layer after activated */
+//    ib_toggle_layer: ib_toggle_layer {
+//        compatible = "zmk,input-behavior-tog-layer";
+//        #binding-cells = <1>;
+//        time-to-live-ms = <750>;
+//    };
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
