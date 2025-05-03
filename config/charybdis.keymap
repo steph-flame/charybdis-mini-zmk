@@ -22,6 +22,7 @@
 #define SYS  5
 #define MOUSE  6
 #define SCROLL 7
+#define SNIPE 8
 
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 LB5  // left hand
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
@@ -51,6 +52,7 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 MAKE_HRM(hml_layer, &mo, &kp, KEYS_R THUMBS) // switch layer like HRM
+MAKE_HRM(hmr_layer, &mo, &kp, KEYS_L THUMBS) // switch layer like HRM
 
 // left russian home row
 //MAKE_HRM(hml_ctrl, &kp, &ru_f, KEYS_R THUMBS)
@@ -87,69 +89,22 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&vtrackball>;
+        // scaler: first is multiplier, second one is divider.
+        // temp layer: first argument is layer, second is time in ms
         input-processors = <&zip_xy_scaler 1 3>, <&zip_temp_layer MOUSE 1000>;
 
-//        snipe {
-//            layers = <SNIPE>;
-//            input-processors = <&zip_xy_scaler 1 9>;
-//        };
+        snipe {
+            layers = <SNIPE>;
+            input-processors = <&zip_xy_scaler 1 18>;
+        };
 
         scroll {
             layers = <SCROLL>;
+            // scaler: first is multiplier, second one is divider.
             input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform(INPUT_TRANSFORM_XY_SWAP)>, <&zip_scroll_scaler 1 72>;
         };
     };
-//    /* input config for mouse move mode */
-//    trackball_listener {
-//        compatible = "zmk,input-behavior-listener";
-//        device = <&vtrackball>;
-//        layers = <0 1 2 3 4 5 6>;
-//        evt-type = <INPUT_EV_REL>;
-//        x-input-code = <INPUT_REL_X>;
-//        y-input-code = <INPUT_REL_Y>;
-//        scale-multiplier = <1>;
-//        scale-divisor = <3>;
-//        bindings = <&ib_toggle_layer MOUSE>;
-//    };
-////
-//////    /* input config for snipe mode */
-//////    trackball_snipe_listener {
-//////        compatible = "zmk,input-behavior-listener";
-//////        device = <&vtrackball>;
-//////        layers = <8>;
-//////        evt-type = <INPUT_EV_REL>;
-//////        x-input-code = <INPUT_REL_X>;
-//////        y-input-code = <INPUT_REL_Y>;
-//////        scale-multiplier = <1>;
-//////        scale-divisor = <6>;
-//////    };
-////
-////    /* input config for mouse scroll mode */
-//    trackball_scroll_listener {
-//        compatible = "zmk,input-behavior-listener";
-//        device = <&vtrackball>;
-//        layers = <SCROLL>;
-//        evt-type = <INPUT_EV_REL>;
-//        x-input-code = <INPUT_REL_HWHEEL>; // horizontal scroll
-//        y-input-code = <INPUT_REL_WHEEL>;  // vertical scroll
-//        y-invert;
-////        bindings = <&ib_wheel_scaler 1 4>;
-//    };
-//
-//    /* define a resolution down scaler only for INPUT_REL_WHEEL */
-//    ib_wheel_scaler: ib_wheel_scaler {
-//        compatible = "zmk,input-behavior-scaler";
-//        #binding-cells = <2>;
-//        evt-type = <INPUT_EV_REL>;
-//        input-code = <INPUT_REL_WHEEL>;
-//    };
-//
-////    /* adjust cooldown waiting period for mouse key layer after activated */
-//    ib_toggle_layer: ib_toggle_layer {
-//        compatible = "zmk,input-behavior-tog-layer";
-//        #binding-cells = <1>;
-//        time-to-live-ms = <750>;
-//    };
+
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
@@ -167,11 +122,11 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
             label = "Norman";
             bindings = <
 // ╭────────────────┬──────────────┬─────────────────────────┬─────────────────────────────┬──────────────────┬──────────────╮  ╭──────────────┬─────────────────┬──────────────────────────────────┬──────────────────────────────┬────────────────────────┬─────────╮
-    &lt SYS ESC       &kp Q          &kp W                     &kp D                         &kp F              &kp K             &kp J          &kp U             &lt DIG R                          &kp L                          &mt COLON SEMICOLON      &to GAME
+    &lt SYS ESC       &kp Q          &kp W                     &hmr_layer SNIPE D            &kp F              &kp K             &kp J          &kp U             &lt DIG R                          &kp L                          &mt COLON SEMICOLON      &to GAME
 // ├────────────────┼──────────────┼─────────────────────────┼─────────────────────────────┼──────────────────┼──────────────┤  ├──────────────┼─────────────────┼──────────────────────────────────┼──────────────────────────────┼────────────────────────┼─────────┤
     &kp TAB           &hml LCTRL A   &hml LALT S               &hml LSHFT E                  &hml_layer NAV T   &kp G             &kp Y          &hmr RIGHT_GUI N  &hmr RSHFT I                       &hmr RIGHT_ALT O               &hmr RIGHT_CONTROL H     &all_quotes
 // ├────────────────┼──────────────┼─────────────────────────┼─────────────────────────────┼──────────────────┼──────────────┤  ├──────────────┼─────────────────┼──────────────────────────────────┼──────────────────────────────┼────────────────────────┼─────────┤
-    &kp LSHFT         &kp Z          &kp X                     &hml_layer SCROLL C           &kp V              &kp B             &kp P          &kp M             &kp COMMA                          &kp DOT                        &comment_or 0 SLASH      &mo SCROLL
+    &kp LSHFT         &kp Z          &kp X                     &kp C                         &kp V              &kp B             &kp P          &kp M             &kp COMMA                          &hmr_layer SCROLL DOT          &comment_or 0 SLASH      &mo SCROLL
 // ╰────────────────┴──────────────┴─────────────────────────┼─────────────────────────────┼──────────────────┼──────────────┤  ├──────────────┼─────────────────┼──────────────────────────────────┴──────────────────────────────┴────────────────────────┴─────────╯
                                                                &sk LEFT_COMMAND              &space_or_super SPACE SPACE &mo DIG  &lt SYS ESC    &kp RET
 //                                                           ╰─────────────────────────────┴──────────────────┴──────────────╯  ╰──────────────┴─────────────────╯
@@ -272,6 +227,16 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 
         SCROLL {
             label = "Scroll";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+            >;
+        };
+
+        SNIPE {
+            label = "Snipe";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
