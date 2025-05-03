@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/ext_power.h>
+#include <input/processors.dtsi>
 
 #define HOST_OS 2
 #define QUICK_TAP_MS 175
@@ -82,7 +83,19 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 };
 
 
+&trackpad_listener {
+    input-processors = <&zip_xy_scaler 3 2>;
+
+    scroller {
+        layers = <SCROLL>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
+}
+
+&zip_temp_layer MOUSE 750
+
 / {
+
 //    /* input config for mouse move mode */
 //    trackball_listener {
 //        compatible = "zmk,input-behavior-listener";
