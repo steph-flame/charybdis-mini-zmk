@@ -19,9 +19,6 @@ manifest:
     - name: zmk-split-peripheral-input-relay
       remote: badjeff
       revision: main
-    - name: zmk-input-behavior-listener
-      remote: badjeff
-      revision: main
     - name: prospector-zmk-module
       remote: carrefinho
       revision: main
