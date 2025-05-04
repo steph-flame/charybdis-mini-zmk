@@ -85,6 +85,12 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
+&mt {  // mod-tap config}
+    flavor = "balanced";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <QUICK_TAP_MS>;
+};
+
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
@@ -126,7 +132,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
 // ├────────────────┼──────────────┼─────────────────────────┼─────────────────────────────┼──────────────────┼──────────────┤  ├──────────────┼─────────────────┼──────────────────────────────────┼──────────────────────────────┼────────────────────────┼─────────┤
     &kp TAB           &hml LCTRL A   &hml LALT S               &hml LSHFT E                  &hml_layer NAV T   &kp G             &kp Y          &hmr RIGHT_GUI N  &hmr RSHFT I                       &hmr RIGHT_ALT O               &hmr RIGHT_CONTROL H     &all_quotes
 // ├────────────────┼──────────────┼─────────────────────────┼─────────────────────────────┼──────────────────┼──────────────┤  ├──────────────┼─────────────────┼──────────────────────────────────┼──────────────────────────────┼────────────────────────┼─────────┤
-    &kp LSHFT         &kp Z          &kp X                     &kp C                         &kp V              &kp B             &kp P          &kp M             &kp COMMA                          &hmr_layer SCROLL DOT          &comment_or 0 SLASH      &mo SCROLL
+    &kp LSHFT         &kp Z          &mt LG(X) X               &mt LG(C) C                   &mt LG(V) V        &kp B             &kp P          &kp M             &hmr_layer SNIPE COMMA             &hmr_layer SCROLL DOT          &comment_or 0 SLASH      &mo SCROLL
 // ╰────────────────┴──────────────┴─────────────────────────┼─────────────────────────────┼──────────────────┼──────────────┤  ├──────────────┼─────────────────┼──────────────────────────────────┴──────────────────────────────┴────────────────────────┴─────────╯
                                                                &sk LEFT_COMMAND              &space_or_super SPACE SPACE &mo DIG  &lt SYS ESC    &kp RET
 //                                                           ╰─────────────────────────────┴──────────────────┴──────────────╯  ╰──────────────┴─────────────────╯
