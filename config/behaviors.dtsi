@@ -7,7 +7,6 @@
             mods = <(MOD_LGUI)>; // Explicitly required mods property
             bindings = <&mo 0>;  // The key or layer change action
         };
-    };
 
         hm: homerow_mod {
             compatible = "zmk,behavior-hold-tap";
