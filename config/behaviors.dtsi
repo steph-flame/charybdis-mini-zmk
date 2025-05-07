@@ -1,5 +1,12 @@
 / {
     behaviors {
+        cmd_layer: behavior-mod-morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CMD_LAYER";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI>, <&mo 0>; // Replace LGUI and layer 1 as per your needs
+        };
+
         hm: homerow_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
