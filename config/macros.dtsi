@@ -66,8 +66,7 @@
             #binding-cells = <2>;
             bindings
                 = <&macro_tap &to 0>
-                , <&macro_param_1to1>,
-                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_press &kp MACRO_PLACEHOLDER &macro_param_1to1>
                 , <&macro_pause_for_release>
                 , <&macro_param_1to1>,
                 , <&macro_release &kp MACRO_PLACEHOLDER>
