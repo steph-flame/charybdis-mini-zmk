@@ -49,6 +49,13 @@
             flavor = "tap-preferred";
         };
 
+        backspace_or_delete: backspace_or_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_LCTL)>;
+        };
+
         ru_sh_or_shch: ru_sh_or_shch {
             compatible = "zmk,behavior-hold-tap";
             label = "RU_SH_OR_SHCH";
