@@ -11,7 +11,7 @@
          * Example:
          *  `&lm NUM_LAYER LSHIFT`
          */
-        lm2: lm2 {
+        lm: lm {
             compatible = "zmk,behavior-macro-two-param";
             wait-ms = <0>;
             tap-ms = <0>;
