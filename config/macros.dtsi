@@ -62,7 +62,7 @@
          * use &base_mod MODIFIER LAYER-TO-GO-BACK
          */
         base_mod: base_mod {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             bindings
                 = <&macro_tap &to 0>
