@@ -7,6 +7,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 #define HOST_OS 2
 #define QUICK_TAP_MS 175
@@ -89,6 +90,14 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
+};
+
+/ {
+    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <2000>;
+    };
 };
 
 / {
