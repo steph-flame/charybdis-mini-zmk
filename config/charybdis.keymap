@@ -98,7 +98,17 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
         #input-processor-cells = <2>;
         require-prior-idle-ms = <2000>;
     };
+
+    /omit-if-no-ref/ vertical_scroll_mapper: vertical_scroll_mapper {
+        compatible = "zmk,input-processor-code-mapper";
+        #input-processor-cells = <0>;
+        type = <INPUT_EV_REL>;
+        map
+            = <INPUT_REL_Y INPUT_REL_WHEEL>
+            ;
+    };
 };
+
 
 / {
     trackball_listener {
@@ -116,7 +126,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
         scroll {
             layers = <SCROLL>;
             // scaler: first is multiplier, second one is divider.
-            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform(INPUT_TRANSFORM_XY_SWAP)>, <&zip_scroll_scaler 1 72>;
+            input-processors = <&vertical_scroll_mapper>, <&zip_scroll_transform(INPUT_TRANSFORM_XY_SWAP)>, <&zip_scroll_scaler 1 72>;
         };
     };
 
