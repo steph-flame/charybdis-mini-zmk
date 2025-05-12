@@ -77,7 +77,7 @@
         };
 
         ru_yu_or: ru_yu_or {
-            compatible Z= "zmk,behavior-hold-tap";
+            compatible = "zmk,behavior-hold-tap";
             label = "RU_YU_OR_DOT";
             bindings = <&kp>, <&ru_yu>;
 
