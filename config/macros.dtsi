@@ -94,11 +94,18 @@
             label = "FUN_ARROW_RIGHT";
         };
 
-        comment: comment {
+        comment_open: comment_open {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp FSLH &kp STAR>;
-            label = "MACROS_COMMENT";
+            label = "MACROS_COMMENT OPEN";
+        };
+
+        comment_close: comment_close {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp STAR &kp FSLH>;
+            label = "MACROS_COMMENT CLOSE";
         };
 
         to_russian: to_russian {

@@ -49,6 +49,13 @@
             flavor = "tap-preferred";
         };
 
+        comment_open_or_close: comment_open_or_close {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&comment_open>, <&comment_close>;
+            mods = <(MOD_LGUI|MOD_LSFT|MOD_LCTL)>;
+        };
+
         backspace_or_delete: backspace_or_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
