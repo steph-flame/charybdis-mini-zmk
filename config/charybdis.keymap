@@ -100,6 +100,14 @@ MAKE_HRM(hmr_layer_dig_or_g, &mo, &ru_g, KEYS_L THUMBS)
         require-prior-idle-ms = <1000>;
     };
 
+    zip_scroll_scaler: zip_scroll_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL>;
+        track-remainders;
+    };
+
     /omit-if-no-ref/ vertical_scroll_mapper: vertical_scroll_mapper {
         compatible = "zmk,input-processor-code-mapper";
         #input-processor-cells = <0>;
@@ -127,7 +135,7 @@ MAKE_HRM(hmr_layer_dig_or_g, &mo, &ru_g, KEYS_L THUMBS)
         scroll {
             layers = <SCROLL>;
             // scaler: first is multiplier, second one is divider.
-            input-processors = <&vertical_scroll_mapper>, <&zip_scroll_transform(INPUT_TRANSFORM_XY_SWAP)>, <&zip_scroll_scaler 1 72>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform(INPUT_TRANSFORM_XY_SWAP)>, <&zip_scroll_scaler 1 72>;
         };
     };
 
