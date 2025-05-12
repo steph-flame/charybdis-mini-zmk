@@ -42,7 +42,7 @@
         comment_or: comment_or {
             compatible = "zmk,behavior-hold-tap";
             label = "slash_or_comm";
-            bindings = <&comment>, <&kp>;
+            bindings = <&comment_open_or_close>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
