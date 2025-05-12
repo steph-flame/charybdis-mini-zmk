@@ -68,6 +68,7 @@ MAKE_HRM(hmr_ctrl, &kp, &ru_zh, KEYS_L THUMBS)
 MAKE_HRM(hmr_opt, &kp, &ru_d, KEYS_L THUMBS)
 MAKE_HRM(hmr_shift, &kp, &ru_l, KEYS_L THUMBS)
 MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
+MAKE_HRM(hmr_layer_dig_or_g, &mo, &ru_g, KEYS_L THUMBS)
 
 
 
@@ -168,7 +169,7 @@ MAKE_HRM(hmr_cmd, &lm, &ru_o, KEYS_L THUMBS)
             label = "Russian";
             bindings = <
 // ╭────────────────┬───────────────────┬─────────────────┬───────────────────┬──────────────────────┬─────────────╮     ╭─────────────┬──────────────────────────┬───────────────────────┬───────────────────────┬───────────────────────────────────┬─────────╮
-     ___              &ru_y               &ru_ts            &ru_u               &ru_k                  &ru_ye              &ru_n         &ru_g                      &ru_sh_or_shch 0 0      &ru_z                   &ru_kh_or_e 0 0                     ___
+     ___              &ru_y               &ru_ts            &ru_u               &ru_k                  &ru_ye              &ru_n         &hmr_layer_dig_or_g DIG 0  &ru_sh_or_shch 0 0      &ru_z                   &ru_kh_or_e 0 0                     ___
 // ├────────────────┼───────────────────┼─────────────────┼───────────────────┼──────────────────────┼─────────────┤     ├─────────────┼──────────────────────────┼───────────────────────┼───────────────────────┼───────────────────────────────────┼─────────┤
      ___              &hml_ctrl 0 LCTRL   &hml_opt LALT 0   &hml_shift LSHFT 0  &hml_layer_ru NAV 0    &ru_p               &ru_r         &hmr_cmd 0 RIGHT_COMMAND   &hmr_shift RSHFT K      &hmr_opt RIGHT_ALT L    &hmr_ctrl RIGHT_CONTROL SEMICOLON   ___
 // ├────────────────┼───────────────────┼─────────────────┼───────────────────┼──────────────────────┼─────────────┤     ├─────────────┼──────────────────────────┼───────────────────────┼───────────────────────┼───────────────────────────────────┼─────────┤
