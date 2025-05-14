@@ -5,7 +5,7 @@ manifest:
     - name: badjeff
       url-base: https://github.com/badjeff
     - name: carrefinho
-      url-base: https://github.com/badjeff
+      url-base: https://github.com/thewinger
     - name: urob
       url-base: https://github.com/urob
     - name: englmaxi
