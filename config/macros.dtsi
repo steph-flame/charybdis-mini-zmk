@@ -111,14 +111,14 @@
         to_russian: to_russian {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to RUS &kp LA(LG(LC(RIGHT_PARENTHESIS)))>;
+            bindings = <&to RUS &kp LS(LA(LG(LC(L))))>;
             label = "TO_RUSSIAN";
         };
 
         to_eng: to_eng {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to BASE &kp LC(LA(LG(RIGHT_PARENTHESIS)))>;
+            bindings = <&to BASE &kp LS(LC(LA(LG(L))))>;
             label = "TO_ENG";
         };
     };
