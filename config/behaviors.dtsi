@@ -60,7 +60,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
-            mods = <(MOD_LGUI|MOD_LSFT|MOD_LCTL)>;
+            mods = <(MOD_LCTL)>;
         };
 
         ru_sh_or_shch: ru_sh_or_shch {
