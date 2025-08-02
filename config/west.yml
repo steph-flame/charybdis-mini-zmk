@@ -10,8 +10,10 @@ manifest:
       url-base: https://github.com/bukharovsi
     - name: urob
       url-base: https://github.com/urob
-    - name: englmaxi
-      url-base: https://github.com/englmaxi
+#    - name: englmaxi
+#      url-base: https://github.com/englmaxi
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -29,8 +31,11 @@ manifest:
     - name: zmk-helpers
       remote: urob
       revision: main
-    - name: zmk-dongle-display
-      remote: englmaxi
+#    - name: zmk-dongle-display
+#      remote: englmaxi
+#      revision: main
+    - name: zmk-dongle-screen
+      remote: janpfischer
       revision: main
   self:
     path: config
