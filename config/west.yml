@@ -36,6 +36,6 @@ manifest:
 #      revision: main
     - name: zmk-dongle-screen
       remote: janpfischer
-      revision: main
+      revision: lightsensor
   self:
     path: config
