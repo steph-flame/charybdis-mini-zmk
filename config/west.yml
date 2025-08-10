@@ -13,7 +13,7 @@ manifest:
 #    - name: englmaxi
 #      url-base: https://github.com/englmaxi
     - name: janpfischer
-      url-base: https://github.com/Bukharovsi/zmk-dongle-screen.git
+      url-base: https://github.com/Bukharovsi/zmk-dongle-screen
   projects:
     - name: zmk
       remote: zmkfirmware
