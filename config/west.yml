@@ -13,7 +13,7 @@ manifest:
 #    - name: englmaxi
 #      url-base: https://github.com/englmaxi
     - name: janpfischer
-      url-base: https://github.com/janpfischer
+      url-base: https://github.com/Bukharovsi/zmk-dongle-screen.git
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -36,6 +36,6 @@ manifest:
 #      revision: main
     - name: zmk-dongle-screen
       remote: janpfischer
-      revision: lightsensor
+      revision: main
   self:
     path: config
