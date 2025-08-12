@@ -20,7 +20,7 @@
             require-prior-idle-ms = <150>;
         };
 
-        backspace {
+        backspace_2 {
             bindings = <&backspace_or_delete>;
             key-positions = <RT2 RT3>;
             timeout-ms = <50>;
