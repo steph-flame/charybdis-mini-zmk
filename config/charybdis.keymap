@@ -251,7 +251,6 @@
         };
     };
 
-/ {
     /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
@@ -266,10 +265,9 @@
             = <INPUT_REL_Y INPUT_REL_WHEEL>
             ;
     };
-};
 
 
-/ {
+
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&vtrackball>;
