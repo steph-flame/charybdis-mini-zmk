@@ -1,7 +1,49 @@
 layout: {zmk_keyboard: charybdis}
 layers:
-  Norman:
-  - DEV TOOLS
+  Base:
+  - {t: ESC, h: SYSTEM}
+  - B
+  - F
+  - L
+  - K
+  - Q
+  - P
+  - G
+  - O
+  - U
+  - .
+  - BACK SPACE
+  - TAB
+  - {t: N, h: LCTRL}
+  - {t: S, h: LEFT ALT}
+  - {t: H, h: LSHFT}
+  - {t: T, h: LEFT COMMAND}
+  - M
+  - Y
+  - {t: C, h: RIGHT GUI}
+  - {t: A, h: RSHFT}
+  - {t: E, h: RIGHT ALT}
+  - {t: I, h: RCTRL}
+  - '-'
+  - {t: Navigation, h: toggle}
+  - X
+  - V
+  - J
+  - D
+  - Z
+  - ''''
+  - W
+  - {t: /, h: Snipe}
+  - {t: ;, h: Scroll}
+  - ','
+  - {t: Game, h: toggle}
+  - {t: LEFT COMMAND, h: sticky}
+  - {t: SPACE, h: '&super SPACE'}
+  - Digits
+  - {t: ESC, h: SYSTEM}
+  - RET
+  Game:
+  - {t: ESC, h: Base}
   - Q
   - W
   - E
@@ -12,289 +54,163 @@ layers:
   - I
   - O
   - P
-  - L_BASE L_PHOTO L_GAME
-  - {t: TAB, h: LCMD}
-  - {t: A, h: Symbols}
-  - {t: S, h: LEFT ALT}
-  - {t: D, h: LCTRL}
-  - {t: F, h: LEFT SHIFT}
+  - {t: ▽, type: trans}
+  - TAB
+  - A
+  - S
+  - D
+  - F
   - G
   - H
-  - {t: J, h: RIGHT SHIFT}
-  - {t: K, h: RCTRL}
-  - {t: L, h: RIGHT ALT}
-  - {t: ;, h: RCMD}
-  - DEL
-  - SEARCH
+  - J
+  - K
+  - L
+  - ;
+  - {t: ▽, type: trans}
+  - LSHFT
   - Z
-  - {t: X, h: MEH}
-  - {t: C, h: HYPER}
+  - X
+  - C
   - V
   - B
   - N
   - M
-  - {t: ',', h: HYPER}
-  - {t: ., h: MEH}
-  - ~/
-  - CLIP HIST
-  - SCRL SLOW
-  - L CLK
-  - '&td_bs'
-  - {t: RETURN, h: Mouse}
-  - '&td_space'
-  Numbers:
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '*'
-  - {t: '7', h: F7}
-  - {t: '8', h: F8}
-  - {t: '9', h: F9}
-  - F10
-  - ''
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '-'
-  - {t: '4', h: F4}
-  - {t: '5', h: F5}
-  - {t: '6', h: F6}
-  - {t: +, h: F11}
-  - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - BACK SPACE
-  - SPACE
-  - '='
-  - {t: '1', h: F1}
-  - {t: '2', h: F2}
-  - {t: '3', h: F3}
-  - {t: /, h: DEV TOOLS}
-  - ''
-  - ''
-  - ''
-  - {t: ▽, type: trans}
+  - ','
   - .
-  - '0'
+  - /
+  - {t: Base, h: toggle}
+  - {t: LEFT COMMAND, h: sticky}
+  - SPACE
+  - Digits
+  - {t: ESC, h: SYSTEM}
+  - RET
   Navigation:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&detach_session'
-  - '&create_or_attach'
-  - '&next_pane'
-  - '&show_sessions'
-  - '&sync_panes'
-  - ''
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
-  - HSPLIT
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - VSPLIT
   - HOME
-  - PG DN
-  - PG UP
+  - UP
   - END
-  - ''
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  Symbols:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '*'
-  - '&'
-  - '{'
-  - $
-  - '&td_grave'
-  - '!'
-  - ''
-  - {type: held}
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - ''
-  - '&td_hyphen'
-  - ;
-  - (
-  - '['
-  - +
-  - '|'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '@'
-  - _
-  - <
-  - '#'
-  - '%'
-  - \
+  - {t: PAGE UP, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Game:
   - {t: ▽, type: trans}
-  - TAG Z
-  - TAG E
-  - TAG A
-  - TAG S
-  - TAG B
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
   - {t: ▽, type: trans}
-  - FIT
+  - Alt+ LEFT
   - LEFT
   - DOWN
-  - UP
   - RIGHT
-  - LCTRL
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - SHRED
-  - SHOW TAGS
-  - REJECT
-  - PENDING
-  - ACCEPT
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Alt+ RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  Extras:
-  - POWER
-  - SHRUG
-  - LGTM
-  - GIT COMMIT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - ''
-  - BRIGHTNESS INC
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - OUT TOG
-  - BT CLR
-  - SLEEP
-  - '&sudo'
+  - Alt+ LEFT
   - ''
-  - ''
-  - ''
-  - BRIGHTNESS DEC
-  - ''
-  - PREVIOUS
-  - PLAY PAUSE
-  - STOP
-  - NEXT
-  - ''
-  - LOCK
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - NEW DIR
+  - Alt+ RIGHT
+  - {t: PAGE DOWN, h: toggle}
+  - {t: Base, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: SPACE, h: '&super SPACE'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Digits:
+  - {t: ▽, type: trans}
+  - '~'
+  - $
+  - '{'
+  - '}'
+  - '>='
+  - +
+  - '7'
+  - '8'
+  - '9'
+  - ;
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '!', h: LCTRL}
+  - {t: '@', h: LEFT ALT}
+  - {t: (, h: LSHFT}
+  - {t: ), h: LEFT COMMAND}
+  - ->
+  - '='
+  - '4'
+  - '5'
+  - '6'
+  - KP MULTIPLY
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '|'
+  - '&'
+  - {t: '[', h: <}
+  - {t: ']', h: '>'}
+  - <=
+  - {t: '-', h: _}
+  - '1'
+  - '2'
+  - '3'
+  - .
+  - {t: Base, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - '0'
+  SYSTEM:
+  - {type: held}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - OUT USB
+  - OUT BLE
   - MUTE
-  - VOLUME DOWN
-  - VOLUME UP
-  - PRINT SCREEN
+  - PP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BT CLR
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - OUT TOG
+  - BT PRV
+  - BT NXT
+  - VOL DN
+  - VOL UP
+  - PREV
+  - NEXT
+  - {t: ▽, type: trans}
   - ZMK Studio
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   Mouse:
-  - ''
-  - WHEEL L
-  - WHEEL D
-  - MOVE UP
-  - WHEEL U
-  - WHEEL R
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - TAB
-  - BACK
-  - MOVE L
-  - MOVE D
-  - MOVE R
-  - FWD
-  - ''
-  - RIGHT SHIFT
-  - RCTRL
-  - LEFT ALT
-  - LCMD
-  - ''
-  - ''
-  - UNDO
-  - CUT
-  - COPY
-  - PASTE
-  - Mid CLK
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: RETURN, type: held}
-  - {t: ▽, type: trans}
-  Slow:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -331,9 +247,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - L CLK
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - R CLK
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Scroll:
@@ -370,6 +286,48 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Snipe:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -379,24 +337,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
-- p: [17, 18]
-  k: CAPS WORD
-  l: [Norman]
-- p: [28, 37]
-  k: Mid CLK
-- p: [16, 37]
-  k: R CLK
-- p: [20, 21]
-  k: )
-  l: [Symbols]
-- p: [21, 22]
-  k: ']'
-  l: [Symbols]
 - p: [8, 9]
-  k: '}'
-  l: [Symbols]
-- p: [32, 33]
-  k: '>'
-  l: [Symbols]
-- p: [38, 39]
-  k: L_BASE L_EXTRA
+  k: BACK SPACE
+- p: [7, 8, 9]
+  k: Alt+ BACK SPACE
+- p: [15, 16]
+  k: {t: LEFT SHIFT, h: sticky}
+- p: [14, 15, 16]
+  k: CAPS WORD
