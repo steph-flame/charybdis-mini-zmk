@@ -303,10 +303,10 @@
         BASE {
             label = "Base";
             bindings = <
-&lt SYS ESC  &kp Q             &kp W                &kp E             &kp R                        &kp T      &kp Y        &kp U                  &kp I                        &kp O                       &kp P                      &kp BACKSPACE
-&kp TAB      &hm_left LCTRL A  &hm_left LEFT_ALT S  &hm_left LSHFT D  &hm_left LEFT_COMMAND F      &kp G      &kp H        &hm_right RIGHT_GUI J  &hm_right RSHFT K            &hm_right RIGHT_ALT L       &hm_right RCTRL SEMICOLON  &all_quotes
-&to NAV      &kp Z             &kp X                &kp C             &kp V                        &kp B      &kp N        &kp M                  &hm_right_layer SNIPE COMMA  &hm_right_layer SCROLL DOT  &kp SLASH                  &to 1
-                                                    &sk LEFT_COMMAND  &space_or_super SPACE SPACE  &mo DIG    &lt SYS ESC  &kp RET
+&lt SYS ESC  &kp B             &kp F                &kp L             &kp K                         &kp Q         &kp P           &kp G                  &kp O                        &kp U                              &kp DOT                      &kp BACKSPACE
+&kp TAB      &hm_left LCTRL N  &hm_left LEFT_ALT S  &hm_left LSHFT H  &hm_left LEFT_COMMAND T       &kp M         &kp Y           &hm_right RIGHT_GUI C  &hm_right RSHFT A            &hm_right RIGHT_ALT E              &hm_right RCTRL I            &kp MINUS
+&to NAV      &kp X             &kp V                &kp J             &kp D                         &kp Z         &kp APOS        &kp W                  &hm_right_layer SNIPE SLASH  &hm_right_layer SCROLL SEMICOLON   &kp COMMA                    &to 1
+                                                    &sk LEFT_COMMAND  &space_or_super SPACE SPACE   &mo DIG       &lt SYS ESC     &kp RET
             >;
         };
 
