@@ -306,7 +306,7 @@
 &lt SYS ESC  &kp B             &kp F                &kp L             &kp K                         &kp Q         &kp P           &kp G                  &kp O                        &kp U                              &kp DOT                      &kp BACKSPACE
 &kp TAB      &hm_left LCTRL N  &hm_left LEFT_ALT S  &hm_left LSHFT H  &hm_left LEFT_COMMAND T       &kp M         &kp Y           &hm_right RIGHT_GUI C  &hm_right RSHFT A            &hm_right RIGHT_ALT E              &hm_right RCTRL I            &kp MINUS
 &to NAV      &kp X             &kp V                &kp J             &kp D                         &kp Z         &kp APOS        &kp W                  &hm_right_layer SNIPE SLASH  &hm_right_layer SCROLL SEMICOLON   &kp COMMA                    &to 1
-                                                    &sk LEFT_COMMAND  &space_or_super SPACE SPACE   &mo DIG       &lt SYS ESC     &kp RET
+                                                    &sk LEFT_COMMAND  &kp R                         &mo DIG       &lt SYS ESC     &kp SPACE
             >;
         };
 
