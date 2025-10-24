@@ -38,10 +38,10 @@ layers:
   - ','
   - {t: Game, h: toggle}
   - {t: LEFT COMMAND, h: sticky}
-  - {t: SPACE, h: '&super SPACE'}
+  - R
   - Digits
   - {t: ESC, h: SYSTEM}
-  - RET
+  - SPACE
   Game:
   - {t: ESC, h: Base}
   - Q
