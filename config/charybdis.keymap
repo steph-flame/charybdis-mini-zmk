@@ -144,7 +144,7 @@
         press_shift: press_shift {
             compatible = "zmk,behavior-tap";
             #binding-cells = <0>;
-            bindings = <&kp LSHFT>;
+            bindings = <&sk LSHFT>;
         };
         magic_shift: magic_shift {
             compatible = "zmk,behavior-hold-tap";
