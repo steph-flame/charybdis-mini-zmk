@@ -140,14 +140,14 @@
             #binding-cells = <0>;
             bindings = <&shift_repeat>, <&caps_word>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-        }
+        };
         magic_shift: magic_shift {
             compatible = "zmk,behavior-hold-tap"
             #binding-cells = <0>;
             bindings = <&kp LSHFT>, <&magic_shift_tap>;
             tapping_term_ms = <200>;
             flavor = "balanced";
-        }
+        };
     };
 
     combos {
