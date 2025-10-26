@@ -12,20 +12,20 @@ layers:
   - O
   - U
   - .
-  - BACK SPACE
+  - {t: BACK SPACE, s: DELETE}
   - TAB
   - {t: N, h: LCTRL}
   - {t: S, h: LEFT ALT}
-  - {t: H, h: LSHFT}
-  - {t: T, h: LEFT COMMAND}
+  - {t: H, h: LEFT COMMAND}
+  - {t: T, h: LSHFT}
   - M
   - Y
-  - {t: C, h: RIGHT GUI}
-  - {t: A, h: RSHFT}
+  - {t: C, h: RSHFT}
+  - {t: A, h: RIGHT GUI}
   - {t: E, h: RIGHT ALT}
   - {t: I, h: RCTRL}
   - '-'
-  - {t: Navigation, h: toggle}
+  - {t: LSHFT, h: sticky}
   - X
   - V
   - J
@@ -36,54 +36,12 @@ layers:
   - {t: /, h: Snipe}
   - {t: ;, h: Scroll}
   - ','
-  - {t: Game, h: toggle}
+  - {t: RSHFT, h: sticky}
   - {t: LEFT COMMAND, h: sticky}
-  - R
-  - Digits
-  - {t: ESC, h: SYSTEM}
-  - SPACE
-  Game:
-  - {t: ESC, h: Base}
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - {t: ▽, type: trans}
-  - TAB
-  - A
-  - S
-  - D
-  - F
-  - G
-  - H
-  - J
-  - K
-  - L
-  - ;
-  - {t: ▽, type: trans}
-  - LSHFT
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - ','
-  - .
-  - /
-  - {t: Base, h: toggle}
-  - {t: LEFT COMMAND, h: sticky}
-  - SPACE
-  - Digits
-  - {t: ESC, h: SYSTEM}
-  - RET
+  - {t: R, h: Navigation}
+  - '&magic_shift'
+  - ENTER
+  - {t: SPACE, h: Digits}
   Navigation:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -122,52 +80,52 @@ layers:
   - {t: PAGE DOWN, h: toggle}
   - {t: Base, h: toggle}
   - {t: ▽, type: trans}
-  - {t: SPACE, h: '&super SPACE'}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Digits:
   - {t: ▽, type: trans}
-  - '~'
-  - $
-  - '{'
-  - '}'
-  - '>='
-  - +
+  - ;
   - '7'
   - '8'
   - '9'
-  - ;
+  - +
+  - '>='
+  - '{'
+  - '}'
+  - $
+  - '~'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '!', h: LCTRL}
-  - {t: '@', h: LEFT ALT}
-  - {t: (, h: LSHFT}
-  - {t: ), h: LEFT COMMAND}
-  - ->
-  - '='
+  - KP MULTIPLY
   - '4'
   - '5'
   - '6'
-  - KP MULTIPLY
+  - '='
+  - ->
+  - (
+  - )
+  - '@'
+  - '!'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '|'
-  - '&'
-  - {t: '[', h: <}
-  - {t: ']', h: '>'}
-  - <=
-  - {t: '-', h: _}
+  - .
   - '1'
   - '2'
   - '3'
-  - .
-  - {t: Base, h: toggle}
+  - {t: '-', h: _}
+  - <=
+  - '['
+  - ']'
+  - '&'
+  - '|'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '0'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - '0'
   SYSTEM:
   - {type: held}
   - F1
