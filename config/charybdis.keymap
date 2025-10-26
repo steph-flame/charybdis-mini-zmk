@@ -141,10 +141,15 @@
             bindings = <&shift_repeat>, <&caps_word>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+        press_shift: press_shift {
+            compatible = "zmk,behavior-tap";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>;
+        };
         magic_shift: magic_shift {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp LSHFT>, <&magic_shift_tap>;
+            #binding-cells = <0>;
+            bindings = <&press_shift>, <&magic_shift_tap>;
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
