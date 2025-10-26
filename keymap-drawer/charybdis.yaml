@@ -14,16 +14,16 @@ layers:
   - .
   - {t: BACK SPACE, s: DELETE}
   - TAB
-  - {t: N, h: LCTRL}
-  - {t: S, h: LEFT ALT}
-  - {t: H, h: LEFT COMMAND}
-  - {t: T, h: LSHFT}
+  - '&hm_left LCTRL N'
+  - '&hm_left LEFT_ALT S'
+  - '&hm_left LEFT_COMMAND H'
+  - '&hm_left LSHFT T'
   - M
   - Y
-  - {t: C, h: RSHFT}
-  - {t: A, h: RIGHT GUI}
-  - {t: E, h: RIGHT ALT}
-  - {t: I, h: RCTRL}
+  - '&hm_right RSHFT C'
+  - '&hm_right RIGHT_GUI A'
+  - '&hm_right RIGHT_ALT E'
+  - '&hm_right RCTRL I'
   - '-'
   - {t: LSHFT, h: sticky}
   - X
@@ -294,12 +294,3 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-combos:
-- p: [8, 9]
-  k: BACK SPACE
-- p: [7, 8, 9]
-  k: Alt+ BACK SPACE
-- p: [15, 16]
-  k: {t: LEFT SHIFT, h: sticky}
-- p: [14, 15, 16]
-  k: CAPS WORD
