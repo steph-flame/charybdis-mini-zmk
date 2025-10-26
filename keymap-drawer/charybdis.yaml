@@ -39,8 +39,8 @@ layers:
   - {t: RSHFT, h: sticky}
   - {t: LEFT COMMAND, h: sticky}
   - {t: R, h: Navigation}
-  - '&magic_shift'
-  - ENTER
+  - '&magic_shift LSHFT 0'
+  - RET
   - {t: SPACE, h: Digits}
   Navigation:
   - {t: ▽, type: trans}
