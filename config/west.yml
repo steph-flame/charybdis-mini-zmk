@@ -31,6 +31,9 @@ manifest:
     - name: zmk-helpers
       remote: urob
       revision: main
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: main
 #    - name: zmk-dongle-display
 #      remote: englmaxi
 #      revision: main

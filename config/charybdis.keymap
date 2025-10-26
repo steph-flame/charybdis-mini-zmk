@@ -18,13 +18,12 @@
 #define THUMBS 36 37 38 39 40  // Thumb keys.
 
 #define BASE 0
-#define GAME 1
-#define NAV  2
-#define DIG  3
-#define SYS  4
-#define MOUSE  5
-#define SCROLL 6
-#define SNIPE 7
+#define NAV  1
+#define DIG  2
+#define SYS  3
+#define MOUSE  4
+#define SCROLL 5
+#define SNIPE 6
 
 &sk {  // sticky-key config
     release-after-ms = <900>;  // release after 0.9s
@@ -41,7 +40,7 @@
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
-&mt {  // mod-tap config}
+&mt {  // mod-tap config
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
@@ -115,15 +114,40 @@
             bindings = <&mt GRAVE SQT>, <&kp DOUBLE_QUOTES>;
         };
 
-        space_or_super: space_or_super {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <125>;
-            bindings = <&super>, <&kp>;
+        backspace_or_delete: backspace_or_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        // Tap: repeat after alpha, else sticky-shift |
+        // Double-tap (shift + tap): caps-word |
+        // Hold: shift
+        shift_repeat: shift_repeat {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT>;
+            repeat {
+                trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
+                bindings = <&key_repeat>;
+                max-prior-idle-ms = <350>;
+                strict-modifiers;
+            };
+        };
+        magic_shift_tap: magic_shift_tap { 
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&shift_repeat>, <&caps_word>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        }
+        magic_shift: magic_shift {
+            compatible = "zmk,behavior-hold-tap"
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&magic_shift_tap>;
+            tapping_term_ms = <200>;
+            flavor = "balanced";
+        }
     };
 
     combos {
@@ -303,20 +327,10 @@
         BASE {
             label = "Base";
             bindings = <
-&lt SYS ESC  &kp B             &kp F                &kp L             &kp K                         &kp Q         &kp P           &kp G                  &kp O                        &kp U                              &kp DOT                      &kp BACKSPACE
-&kp TAB      &hm_left LCTRL N  &hm_left LEFT_ALT S  &hm_left LSHFT H  &hm_left LEFT_COMMAND T       &kp M         &kp Y           &hm_right RIGHT_GUI C  &hm_right RSHFT A            &hm_right RIGHT_ALT E              &hm_right RCTRL I            &kp MINUS
-&to NAV      &kp X             &kp V                &kp J             &kp D                         &kp Z         &kp APOS        &kp W                  &hm_right_layer SNIPE SLASH  &hm_right_layer SCROLL SEMICOLON   &kp COMMA                    &to 1
-                                                    &sk LEFT_COMMAND  &kp R                         &mo DIG       &lt SYS ESC     &kp SPACE
-            >;
-        };
-
-        GAME {
-            label = "Game";
-            bindings = <
-&lt BASE ESC  &kp Q  &kp W  &kp E             &kp R      &kp T      &kp Y        &kp U    &kp I      &kp O    &kp P          &trans
-&kp TAB       &kp A  &kp S  &kp D             &kp F      &kp G      &kp H        &kp J    &kp K      &kp L    &kp SEMICOLON  &trans
-&kp LSHFT     &kp Z  &kp X  &kp C             &kp V      &kp B      &kp N        &kp M    &kp COMMA  &kp DOT  &kp SLASH      &to BASE
-                            &sk LEFT_COMMAND  &kp SPACE  &mo DIG    &lt SYS ESC  &kp RET
+&lt SYS ESC  &kp B             &kp F                &kp L                    &kp K                &kp Q                 &kp P           &kp G                  &kp O                        &kp U                              &kp DOT                      &backspace_or_delete
+&kp TAB      &hm_left LCTRL N  &hm_left LEFT_ALT S  &hm_left LEFT_COMMAND H  &hm_left LSHFT T     &kp M                 &kp Y           &hm_right RSHFT C      &hm_right RIGHT_GUI A        &hm_right RIGHT_ALT E              &hm_right RCTRL I            &kp MINUS
+&sk LSHFT    &kp X             &kp V                &kp J                    &kp D                &kp Z                 &kp APOS        &kp W                  &hm_right_layer SNIPE SLASH  &hm_right_layer SCROLL SEMICOLON   &kp COMMA                    &sk RSHFT 
+                                                    &sk LEFT_COMMAND         &lt NAV R            &magic_shift          &kp ENTER       &lt DIG SPACE
             >;
         };
 
@@ -326,17 +340,17 @@
 &trans  &trans  &trans  &trans  &trans                       &trans    &none         &kp HOME      &kp UP    &kp END        &kt PAGE_UP    &trans
 &trans  &trans  &trans  &trans  &trans                       &trans    &kp LA(LEFT)  &kp LEFT      &kp DOWN  &kp RIGHT      &kp LA(RIGHT)  &trans
 &trans  &trans  &trans  &trans  &trans                       &trans    &none         &kp LA(LEFT)  &none     &kp LA(RIGHT)  &kt PAGE_DOWN  &to BASE
-                        &trans  &space_or_super SPACE SPACE  &trans    &trans        &trans
+                        &trans  &trans                       &trans    &trans        &trans
             >;
         };
 
         digits {
             label = "Digits";
             bindings = <
-&trans  &kp TILDE                   &kp DOLLAR                 &kp LEFT_BRACE                   &kp RIGHT_BRACE                          &more_or_equal      &kp PLUS         &kp N7  &kp N8  &kp N9  &kp SEMICOLON    &trans
-&trans  &hm_left LCTRL EXCLAMATION  &hm_left LEFT_ALT AT_SIGN  &hm_left LSHFT LEFT_PARENTHESIS  &hm_left LEFT_COMMAND RIGHT_PARENTHESIS  &fun_arrow_right    &kp EQUAL        &kp N4  &kp N5  &kp N6  &kp KP_MULTIPLY  &trans
-&trans  &kp PIPE                    &kp AMPERSAND              &mt LESS_THAN LEFT_BRACKET       &mt GREATER_THAN RIGHT_BRACKET           &less_or_equal      &mt UNDER MINUS  &kp N1  &kp N2  &kp N3  &kp PERIOD       &to BASE
-                                                               &trans                           &trans                                   &trans              &trans           &kp N0
+&trans  &kp SEMICOLON          &kp N7  &kp N8  &kp N9     &kp PLUS                &more_or_equal     &kp LEFT_BRACE           &kp RIGHT_BRACE        &kp DOLLAR     &kp TILDE        &trans
+&trans  &kp KP_MULTIPLY        &kp N4  &kp N5  &kp N6     &kp EQUAL               &fun_arrow_right   &kp LEFT_PARENTHESIS     &kp RIGHT_PARENTHESIS  &kp AT_SIGN    &kp EXCLAMATION  &trans
+&trans  &kp PERIOD             &kp N1  &kp N2  &kp N3     &mt UNDER MINUS         &less_or_equal     &kp LEFT_BRACKET         &kp RIGHT_BRACKET      &kp AMPERSAND  &kp PIPE         &trans
+                                       &trans  &kp N0     &trans                  &trans             &trans
             >;
         };
 
