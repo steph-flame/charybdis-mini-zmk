@@ -56,53 +56,6 @@
             mods = <(MOD_LGUI|MOD_LSFT|MOD_LCTL)>;
         };
 
-        backspace_or_delete: backspace_or_delete {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-            mods = <(MOD_LCTL)>;
-        };
-
-        ru_sh_or_shch: ru_sh_or_shch {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RU_SH_OR_SHCH";
-            bindings = <&ru_shch>, <&ru_sh>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
-        ru_b_or: ru_b_or {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RU_B_OR_COMA";
-            bindings = <&kp>, <&ru_b>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
-        ru_yu_or: ru_yu_or {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RU_YU_OR_DOT";
-            bindings = <&kp>, <&ru_yu>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
-        ru_kh_or_e: ru_kh_or_e {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RU_KH_OR_E";
-            bindings = <&ru_e>, <&ru_kh>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-        };
-
         all_quotes: all_quotes {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -110,14 +63,5 @@
             bindings = <&mt GRAVE SQT>, <&kp DOUBLE_QUOTES>;
         };
 
-        space_or_super: space_or_super {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <250>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <125>;
-            bindings = <&super>, <&kp>;
-        };
     };
 };

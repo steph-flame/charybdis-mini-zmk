@@ -81,7 +81,6 @@ on:
 jobs:
   draw:
     runs-on: ubuntu-latest
-    if: false
     outputs:
       drawings: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     steps:
