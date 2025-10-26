@@ -143,8 +143,8 @@
         };
         magic_shift: magic_shift {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            bindings = <&kp LSHFT &magic_shift_tap>;
+            #binding-cells = <2>;
+            bindings = <&kp LSHFT>, <&magic_shift_tap>;
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
